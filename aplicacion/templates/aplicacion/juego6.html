@@ -1,0 +1,117 @@
+{% extends 'aplicacion/base.html' %}
+
+{% load static %}
+
+{% block css%}
+<link rel="stylesheet" type="text/css" href="{% static '/aplicacion/css/juego6.css' %}">
+{% endblock %}
+
+
+{% block contenido %}
+<div class="header">
+    <h1></h1>
+    <h1></h1>
+    <p></p>
+</div>
+
+<div class="row">
+
+    <div class="side">
+        <h2>Acerca del juego</h2>
+        <h5></h5>
+        
+
+        <div class="fakeimg" style="height:300px;" ></div>
+    
+        
+
+        <h1>Prueba las nuevas plataformas de las zonas abiertas</h1>
+
+        <br>
+            <p>Corre a través de cinco enormes islas en las que encontrarás 
+                frondosos bosques, enormes cascadas y calurosos desiertos. Cada 
+                una de ellas con sus propios desafíos únicos de acción sobre 
+                plataformas y sus secretos ocultos por descubrir.</p>
+        
+        <br>
+            
+        <h1>Libertad a una velocidad inigualable</h1>
+        <br>
+
+        <h3>
+            Explora Starfall Islands y descubre lo que ofrece cada 
+            una a la velocidad que solo Sonic puede alcanzar. Elige 
+            tu propio camino y descubre misiones secundarias y puzles, 
+            escala estructuras enormes, ve de pesca y encuéntrate 
+            con algún que otro amigo en tus aventuras...  </h3>
+        
+        <br>
+
+        <p>Ponte a prueba en el ciberespacio</p>
+
+        <div class="fakeimg1" style="height:300px;"></div><br>
+
+        <br>
+
+        <p>Con casi 4.000 reseñas, el 94 % de ellas son positivas, 
+            lo que confirma que la opinión pública ha recibido muy 
+            bien en PC al último título de SEGA. Esto viene a demostrar 
+            que los puntos fuertes de Sonic Fronties han sido más 
+            que suficientes como para no empañar la experiencia de los jugadores.</p>
+
+        <div class="fakeimg2" style="height:300px;"></div><br>
+        
+    </div>
+
+
+    <div class="main">
+        <h1>Sonic Frontiers</h1>
+        <p>¡Dos mundos chocan en la nueva y vertiginosa aventura de Sonic the Hedgehog! 
+            Al ir en busca de las Chaos Emeralds perdidas, Sonic llega a una antigua isla 
+            repleta de criaturas un tanto extrañas. Tendrá que luchar contra hordas de 
+            poderosos enemigos mientras explora un mundo impresionante lleno de acción, 
+            aventura y misterios. </p>
+        <br>
+        <br>
+        <h2> ¡DISFRUTA DE SONIC COMO NUNCA ANTES! </h2>
+        <div class="fakeimg3" style="height:300x;"></div>
+        <br>
+        <br>
+        <h2> Un inmenso y fantastico mundo por explorar </h2>
+        <div class="fakeimg4" style="height:300x;"></div>
+        <br>
+        <br>
+        <h2>Una nueva aventura llena de misterios e intrigas </h2>
+        <p>Conviértete en Sonic y viaja para desvelar los misterios
+            de una antigua civilización amenazada por hordas de robots.  
+            Con tu ingenio y una misteriosa voz como guía, tendrás que  
+            salvar a tus amigos y a los enigmáticos habitantes de  
+            Starfall Islands de una colosal amenaza mecánica</p>
+        <br>
+        <div class="fakeimg5" style="height:300px;"></div>
+        <div class="fakeimg6" style="height:300px;"></div>
+
+
+    </div>
+</div>
+
+<div class="footer">
+    <div class="clearfix">
+        <h2>el valor de este juego es de $ </h2> <h2 id='valor-dolar'>15000</h2>
+       
+        <input type="checkbox" id="checkUsd" > Ver en USD
+          
+          <br>
+        <a href="carrito.html"> <button type="button" class="comprarbtn">Añadir al carrito</button>
+        </a>
+        
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

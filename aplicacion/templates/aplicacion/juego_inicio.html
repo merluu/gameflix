@@ -1,0 +1,43 @@
+{% extends 'aplicacion/base.html' %}
+
+{% load static %}
+
+
+{% block css%}
+<link rel="stylesheet" type="text/css" href="{% static '/aplicacion/css/cartelera.css' %}">
+<link rel="stylesheet" href="{% static '/aplicacion/css/cliente-inicio.css' %}">
+{% endblock %}
+
+{% block contenido %}
+<hr>
+<div align="center">
+<h2 style="color: white;">Lista de Juegos</h2>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-2">id juego</div>
+        <div class="col-2">Nombre</div>
+        <div class="col-2">Precio</div>
+        <div class="col-2">Fecha</div>
+        <div class="col-4">Imagen</div>
+    </div>
+<div class="container-fluid">
+        
+    {% for j in juegos %}
+        <div class="row">
+            <hr>
+            <div class="col-sm-2">{{j.id }}</div>
+            <br>
+            <div class="col-sm-2">{{j.nombre |capfirst}}</div>
+            <br>
+            <div class="col-sm-2">{{j.precio }}</div>
+            <br>
+            <div class="col-sm-2">{{j.fecha_creacion}}</div>
+            <br>
+            <div class="col-sm-4"><img src="{{j.imagen.url}}" alt="imagen juego" class="img-fluid" width="80" 
+            height="80"></div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}

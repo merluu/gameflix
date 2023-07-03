@@ -1,0 +1,104 @@
+{% extends 'aplicacion/base.html' %}
+
+{% load static %}
+
+{% block css%}
+<link rel="stylesheet" type="text/css" href="{% static '/aplicacion/css/juego3.css' %}">
+
+{% endblock %}
+
+{% block contenido %}
+
+<div class="header">
+    <h1></h1>
+    <h1></h1>
+    <p></p>
+</div>
+<div class="row">
+
+    <div class="side">
+        <h2>Acerca del juego</h2>
+        <h5></h5>
+
+
+        <div class="fakeimg" style="height:300px;"></div>
+
+
+
+        <h1>Sinopsis</h1>
+
+        <br>
+        <p>Sin reino. Sin recuerdos. Después de un letargo que ha durado 100 años,
+            Link se despierta solo en un mundo
+            que ya no recuerda. Ahora, el héroe legendario debe explorar ese extenso
+            y misterioso mundo y recuperar sus
+            recuerdos antes de que Hyrule esté perdido para siempre. </p>
+
+        <br>
+
+        <h1>La tableta sheikah</h1>
+        <br>
+
+        <h3>Es una misteriosa tableta de piedra cuyo centro resplandece. Link no recuerda haber visto nada parecido,
+            pero de alguna manera le resulta familiar… </h3>
+
+        <br>
+
+        <p>Explora Hyrule</p>
+
+        <div class="fakeimg1" style="height:300px;"></div><br>
+
+        <br>
+
+        <p>La tableta sheikah muestra un mapa de Hyrule que guiará a Link durante su viaje.
+            También dispone de un catalejo,
+            con el que Link podrá observar lugares interesantes a mucha distancia.</p>
+
+        <div class="fakeimg2" style="height:300px;"></div><br>
+
+    </div>
+
+
+    <div class="main">
+        <h1>Zelda:Breath Of The Wild</h1>
+        <p>Descubre el extenso mundo que te rodea
+            Explora el paisaje de Hyrule como quieras.
+            Escala torres y montañas para avistar nuevos destinos,
+            elige tu propio camino para llegar a ellos y adéntrate
+            en territorios desconocidos.</p>
+        <br>
+        <br>
+        <h2> Santuarios </h2>
+        <div class="fakeimg3" style="height:300x;"></div>
+        <br>
+        <br>
+        <h2> Torres </h2>
+        <div class="fakeimg4" style="height:300x;"></div>
+        <br>
+        <br>
+        <h2>Siempre bien organizado </h2>
+        <p>Link puede consultar el estado de su aventura en la tableta sheikah,
+            utilizando la alforja para organizar los objetos y viendo las
+            misiones en el diario de viaje.</p>
+        <br>
+        <div class="fakeimg5" style="height:300px;"></div>
+        <div class="fakeimg6" style="height:300px;"></div>
+
+
+    </div>
+</div>
+
+<div class="footer">
+    <div class="clearfix">
+        <h2>el valor de este juego es de $ </h2>
+        <h2 id='valor-dolar'>50000</h2>
+
+        <input type="checkbox" id="checkUsd"> Ver en USD
+
+        <br>
+        <a href="carrito.html"> <button type="button" class="comprarbtn">Añadir al carrito</button>
+        </a>
+    </div>
+</div>
+
+    {% endblock %}

@@ -1,0 +1,100 @@
+{% extends 'aplicacion/base.html' %}
+
+{% load static %}
+
+{% block css%}
+<link rel="stylesheet" type="text/css" href="{% static '/aplicacion/css/juego7.css' %}">
+{% endblock %}
+
+
+{% block contenido %}
+
+<div class="header">
+    <h1></h1>
+    <h1></h1>
+    <p></p>
+</div>
+
+<div class="row">
+
+    <div class="side">
+        <h2>Acerca del juego</h2>
+        <h5></h5>
+        
+
+        <div class="fakeimg" style="height:300px;" ></div>
+    
+        
+
+        <h1>Un juego de lucha para una nueva generación</h1>
+
+        <br>
+            <p>Con la tecnología de Unreal Engine 5 y disponible 
+                de forma exclusiva para PS5, Xbox Series X|S y PC 
+                digital, TEKKEN 8 lleva al límite el hardware y las 
+                tecnologías de última generación. </p>
+        
+        <br>
+            
+        <h1>Nuevo juego, nuevos enfrentamientos</h1>
+        <br>
+
+        <h3>La saga TEKKEN ostenta el récord de la historia con mayor recorrido de una franquicia de videojuegos. </h3>
+        
+        <br>
+
+        <p>Tal y como se menciona en el diálogo final de Tekken 7, esta nueva entrega se centrará en el enfrentamiento padre e hijo entre Kazuya Mishima y Jin Kazama.</p>
+
+        <div class="fakeimg1" style="height:300px;"></div><br>
+
+        <br>
+
+        <p>Como Paul Phoenix, Marshall Law, King, Lars Alexandersson y Jack-8.</p>
+
+        <div class="fakeimg2" style="height:300px;"></div><br>
+        
+    </div>
+
+
+    <div class="main">
+        <h1>TEKKEN 8</h1>
+        <p>La última entrega de la saga presenta una mecánica de 
+            juego completamente nueva llamada «Heat System», que 
+            da a los jugadores la posibilidad de emplear su agresividad 
+            como táctica e incorporar ataques ofensivos a su estilo de 
+            juego, con movimientos especiales y mejoras a las capacidades 
+            del personaje conforme a las características únicas de cada uno.  </p>
+        <br>
+        <br>
+        <h2>Gran variedad de luchadores </h2>
+        <div class="fakeimg3" style="height:300x;"></div>
+        <br>
+        <br>
+        <h2>Tras 25 años sin su presencia, ¡Jun Kazama se une al elenco de TEKKEN 8 como personaje jugable!  </h2>
+        <div class="fakeimg4" style="height:300x;"></div>
+        <br>
+        <br>
+        <h2>Jin Kazama </h2>
+        <p>Debido al desprecio que sentía por la sangre maldita que le recorría las venas, Jin Kazama trató de poner fin a su diabólico linaje.</p>
+        <br>
+        <div class="fakeimg5" style="height:300px;"></div>
+        <div class="fakeimg6" style="height:300px;"></div>
+
+
+    </div>
+</div>
+
+<div class="footer">
+    <div class="clearfix">
+        <h2>el valor de este juego es de $ </h2> <h2 id='valor-dolar'>25000</h2>
+       
+        <input type="checkbox" id="checkUsd" > Ver en USD
+          
+          <br>
+        <a href="carrito.html"> <button type="button" class="comprarbtn">Añadir al carrito</button>
+        </a>
+        
+</div>
+
+
+{% endblock %}

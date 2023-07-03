@@ -1,0 +1,109 @@
+{% extends 'aplicacion/base.html' %}
+
+{% load static %}
+
+{% block css%}
+<link rel="stylesheet" type="text/css" href="{% static '/aplicacion/css/juego1.css' %}">
+
+{% endblock %}
+
+{% block contenido %}
+
+<div class="header">
+
+</div>
+<div class="row">
+
+    <div class="side">
+        <h2>Acerca del juego</h2>
+        <h5></h5>
+        <br>
+        <br>
+
+
+
+        <div class="fakeimg" style="height:300px;"></div>
+        <br>
+        <br>
+
+        <h1>¿Qué es World of Warcraft?</h1>
+
+        <br>
+        <p>En World of Warcraft, juegas con un poderoso héroe que lucha contra
+            monstruos gigantes, se adentra en peligrosas mazmorras y defiende el
+            mundo de Azeroth contra todo tipo de amenazas, entre otras muchas cosas. </p>
+
+        <br>
+
+        <h1>¿En quién te convertirás?</h1>
+        <br>
+        <br>
+
+
+        <h3>deberas eleguir un bando!!! </h3>
+
+        <br>
+
+        <p>Por la Horda : La Horda lucha por el honor y la libertad, y sobrevive en un mundo que cuestiona su unidad
+            y su fuerza.</p>
+        <br>
+        <br>
+
+        <div class="fakeimg1" style="height:300px;"></div><br>
+
+        <br>
+
+        <p>¡Tú eres Mario! ¡Dependerá de ti rescatar a las personas Champiñón de la magia negra de Koopa!</p>
+        <br>
+        <br>
+
+        <div class="fakeimg2" style="height:300px;"></div><br>
+
+    </div>
+
+
+    <div class="main">
+        <h1>World of warcraft</h1>
+        <p>Habitantes de Azeroth
+            Azeroth alberga una gran variedad de razas, algunas oriundas de sus tierras y otras provenientes de
+            otros reinos.
+            La raza que decidas utilizar definirá para quién lucharás en esta guerra interminable, ya sea como
+            defensor acérrimo
+            de la Alianza o guardián feroz de la Horda. ¿De qué lado estás?</p>
+        <br>
+        <br>
+        <h2>Personajes de la ALIANZA </h2>
+        <div class="fakeimg3" style="height:300px;"></div>
+        <br>
+        <br>
+        <h2>Personajes de la HORDA </h2>
+        <div class="fakeimg4" style="height:300px;"></div>
+        <br>
+        <br>
+        <h2>Personajes RAZAS ALIADAS </h2>
+        <p>Los héroes de la Alianza y de la Horda descubren aliados nuevos mientras exploran tierras lejanas. Las
+            razas que aparecen
+            a continuación deben unirse a la causa de tu facción en el juego para poder jugar con ellas.</p>
+        <br>
+        <div class="fakeimg5" style="height:300px;"></div>
+        <br>
+        <div class="fakeimg6" style="height:300px;"></div>
+
+
+    </div>
+</div>
+
+<div class="footer">
+    <div class="clearfix">
+        <h2>el valor de este juego es de $ </h2>
+        <h2 id='valor-dolar'>35000</h2>
+
+        <input type="checkbox" id="checkUsd"> Ver en USD
+
+        <br>
+        <a href="#"> <button type="button" class="comprarbtn">Añadir al carrito</button>
+        </a>
+
+    </div>
+
+    {% endblock %}

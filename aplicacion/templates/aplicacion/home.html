@@ -1,0 +1,92 @@
+{% extends 'aplicacion/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+
+<div style="height: 40%;">
+    <h1 align="center"> <FONT FACE="arial black">Próximos Lanzamientos </FONT>  </h1> 
+    <div id="demo" class="carousel slide" data-bs-ride="carousel"> 
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>  
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        
+    </div>
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+        <img src="{% static 'aplicacion/imagenes/thelegendofzelda.jfif' %}" alt="zelda" class="d-block w-100" height="500vh">
+        </div>
+        <div class="carousel-item">
+        <img src="{% static 'aplicacion/imagenes/a_mirage.png' %}" alt="genshin" class="d-block w-100" height="500vh">
+        </div>
+        <div class="carousel-item">
+        <img src="{% static 'aplicacion/imagenes/finalfantasy.jpg' %}" alt="New final_fantasy" class="d-block w-100" height="500vh">
+        </div>
+    </div>
+
+    
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+    </div>
+</div>
+
+<hr>
+
+    <div class="container">
+    <h1 align="center"> <FONT FACE="arial black">Los más vendidos </FONT>  </h1> 
+    <div class="row">
+        <div class="col-4">
+        <div class="card tarjeta" style="width:400px;" id="ric" align="center">
+            <img class="card-img-top" src="{% static 'aplicacion/imagenes/amq_sonic_chaosEsmeralds.jpg' %}" alt="Card image" height="400vh">
+            <div class="card-body">
+            <h4 class="card-title" align="center">Sonic Frontier</h4>
+            <p class="card-text">Sonic Frontier.</p>
+            <a href="{% url 'cartelera' %}" class="btn btn-danger">Ver juego</a>
+            </div>
+        </div>
+        </div>
+        <div class="col-4">
+        <div class="card tarjeta" style="width:400px" align="center">
+            <img class="card-img-top" src="{% static 'aplicacion/imagenes/portadamariob.jpg' %}" alt="Card image" height="400vh" >
+            <div class="card-body">
+            <h4 class="card-title" align="center">Super Mario Bross</h4>
+            <p class="card-text">Super Mario Bross.</p>
+            <a href="{% url 'cartelera' %}" class="btn btn-danger">Ver juego</a>
+            </div>
+        </div>
+        </div>
+        <div class="col-4">
+        <div class="card tarjeta" style="width:400px" align="center">
+            <img class="card-img-top" src="{% static 'aplicacion/imagenes/amq_doom_gameplay.jpg' %}" alt="Card image" height="400vh">
+            <div class="card-body">
+            <h4 class="card-title" align="center">Doom Eternal</h4>
+            <p class="card-text">Doom Eternal.</p>
+            <a href="{% url 'cartelera' %}" class="btn btn-danger" >Ver juego</a>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <br>
+
+<nav class="navbar navbar-dark bg-dark">
+    <form class="container-fluid">
+    <div class="input-group">
+        <span class="input-group-text" id="basic-addon1">@</span>
+        <input type="text" class="form-control" placeholder="Suscribete" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    </form>
+</nav>
+
+<br>
+
+{% endblock %}

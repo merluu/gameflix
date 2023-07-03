@@ -1,0 +1,130 @@
+body {
+    background-image: url("../imagenes/fondo.jpg");
+    font-family: 'Aclonica';
+    color: white;
+    margin-top: 0%;
+    margin-bottom: 0%;
+
+}
+
+* {
+    box-sizing: border-box
+}
+
+
+
+/* Full-width input fields */
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+
+@media screen and (max-width: 2560px) and (min-width: 1024px) {
+    form {
+        margin-left: 25%;
+        margin-right: 25%;
+        margin-top: 0%;
+        margin-bottom: 3%;
+        padding-bottom: 3%;
+    }
+}
+
+
+/* Set a style for all buttons */
+button {
+    background-color: green;
+    color: white;
+    float: left;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn,
+.signupbtn {
+
+    width: 50%;
+}
+
+.container-fluid {
+    margin-top: 0%;
+    margin-bottom: 1%;
+    margin-left: 0%;
+    height: 30px;
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+
+
+}
+
+/* Clear floats */
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+
+    .cancelbtn,
+    .signupbtn {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 2560px) and (min-width: 1024px) {
+
+    .container-fluid {
+
+        width: 100%;
+    }
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+    background-color: #f1f1f1;
+    height: 100%;
+}
+
+/* On small screens, set height to 'auto' for the sidenav and grid */
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+
+    .row.content {
+        height: auto;
+    }
+}
+
+/* Dropdown button style */
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus {
+    background-color: #f1f1f1;
+}

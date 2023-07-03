@@ -1,0 +1,275 @@
+* {
+    box-sizing: border-box !important;
+
+}
+
+/* Style the body */
+body {
+    font-family: 'Aclonica' !important;
+    margin: 0 !important;
+    background-image: url(../imagenes/fondo.jpg)!important;
+    margin-top: 0%!important;
+    background-repeat: no-repeat;
+
+}
+
+.side h2 {
+    font-size: 30px !important;
+}
+
+.side h1 {
+    font-size: 25px !important;
+}
+
+.side h3 {
+    font-size: 20px !important;
+    color: orangered !important;
+}
+
+.main h1 {
+    font-size: 60px !important;
+    color: powderblue !important;
+}
+
+.main p {
+    font-size: 20px !important;
+    color: white !important;
+}
+
+.main h2 {
+    font-size: 30px !important;
+    color: white !important;
+}
+.main h3 {
+    font-size: 30px !important;
+    color: rgb(0, 98, 255)!important;
+}
+
+
+
+
+/* Header/logo Title */
+.header {
+    
+    margin-top:0%!important;
+    padding: 15% !important;
+    text-align: center !important;
+    color: black !important;
+    align-items: center;
+    background-image: url(../imagenes/portadamariob.jpg) !important;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+    font-size: 80px !important;
+}
+
+/* Style the top navigation bar */
+.navbar {
+    overflow: hidden !important;
+    background-color: teal !important;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+    float: left !important;
+    display: block !important;
+    color: white !important;
+    text-align: center !important;
+    padding: 14px 20px !important;
+    text-decoration: none !important;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+    float: right !important;
+
+}
+
+/* Change color on hover */
+.navbar a:hover {
+    background-color: #ddd !important;
+    color: black !important;
+}
+
+/* Column container */
+.row {
+    background-image: url(../imagenes/fondo.jpg)!important;
+    background-image: none!important;
+    display: -ms-flexbox !important;
+    /* IE10 */
+    display: flex !important;
+    -ms-flex-wrap: wrap !important;
+    /* IE10 */
+    flex-wrap: wrap !important;
+    margin-top: 0%!important;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+    
+    -ms-flex: 30% !important;
+    /* IE10 */
+    flex: 30% !important;
+    background-color: #f1f1f1 !important;
+    padding: 20px !important;
+    background-color: black !important;
+    color: white !important;
+    margin-top: 0%!important;
+}
+
+/* Main column */
+.main {
+    -ms-flex: 70% !important;
+    /* IE10 */
+    flex: 70% !important;
+    background-color: white !important;
+    padding: 20px !important;
+    background-image: url(../imagenes/fondo.jpg)!important;
+    color: white !important;
+    margin-top: 0%!important;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    background-color: #aaa !important;
+    height: 300px !important;
+    background-image: url(../imagenes/marionintendo.png)!important;
+    background-position: center !important;
+    background-size: cover !important;
+
+
+}
+
+.fakeimg1 {
+    background-color: #aaa !important;
+    height: 300px !important;
+    background-image: url(../imagenes/ruinareinomario.webp)!important;
+    background-position: center !important;
+    background-size: cover !important;
+    margin-top: 3%;
+    margin-bottom: 3%;
+
+}
+
+.fakeimg2 {
+    background-color: #aaa !important;
+    height: 300px !important;
+    background-image: url(../imagenes/recuperarreinomario.webp)!important;
+    background-position: center !important;
+    background-size: cover !important;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.fakeimg3 {
+    background-color: #aaa !important;
+    height: 35% !important;
+    width: 80%!important;
+    background-image: url(../imagenes/personajesssmario.png)!important;
+    background-size: cover !important;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+
+.fakeimg5 {
+    background-color: #aaa !important;
+    width: 80%!important;
+    background-image: url(../imagenes/transformacionesmario.jpg)!important;
+    background-size: cover !important;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    height:30%;
+}
+
+
+
+
+/* Footer */
+.footer {
+    padding: 20px !important;
+    text-align: center !important;
+    background: #ddd !important;
+    background-color: teal !important;
+    width: 100% !important;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 768px) {
+
+    * {
+    }
+    
+    .row {
+        flex-direction: column !important;
+    }
+    body {
+        font-family: 'Aclonica' !important;
+        margin: 0 !important;
+        background-image: url(../imagenes/fondo.jpg)!important;
+    
+    }
+    /* Header/logo Title */
+.header {
+    
+    margin-top:0%!important;
+    text-align: center !important;
+    color: black !important;
+    align-items: center;
+    background-image: url(../imagenes/portadamariob.jpg) !important;
+}
+
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 426px) {
+    * {
+    }
+    body {
+        font-family: 'Aclonica' !important;
+        margin: 0 !important;
+        background-image: url(../imagenes/fondo.jpg)!important;
+    
+    }
+
+    .header {
+    
+        margin-top:0%!important;
+        text-align: center !important;
+        color: black !important;
+        align-items: center;
+        background-image: url(../imagenes/portadamariob.jpg) !important;
+    }
+    .navbar a {
+        float: none !important;
+        width: 100% !important;
+    }
+
+    .fakeimg 
+    .fakeimg1
+    .fakeimg2 
+    .fakeimg3 
+    .fakeimg5 {
+        width: 50% !important;
+        height: 50% !important;
+    
+    
+    }
+    .main h1 {
+        font-size: 20px !important;
+        color: powderblue !important;
+    }
+}
+
+
+.comprarbtn {
+    padding: 14px 20px !important;
+    background-color: #f44336 !important;
+    color: white !important;
+    font-size: 20px !important;
+
+}

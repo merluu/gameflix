@@ -1,0 +1,107 @@
+{% extends 'aplicacion/base.html' %}
+
+{% load static %}
+
+{% block css%}
+<link rel="stylesheet" type="text/css" href="{% static '/aplicacion/css/juego5.css' %}">
+{% endblock %}
+
+
+{% block contenido %}
+<div class="header">
+    <h1></h1>
+    <h1></h1>
+    <p></p>
+</div>
+
+<div class="row">
+
+    <div class="side">
+        <h2>Acerca del juego</h2>
+        <h5></h5>
+        
+
+        <div class="fakeimg" style="height:300px;" ></div>
+    
+        
+
+        <h1>La Orden Dorada está rota</h1>
+
+        <br>
+            <p>Álzate, Sin luz, y que la gracia te guíe para abrazar el poder del Círculo
+            de Elden y encumbrarte como señor del Círculo en las Tierras Intermedias.
+            En las Tierras Intermedias gobernadas por la Reina Márika, la Eterna,
+            el Círculo de Elden, origen del Árbol Áureo, ha sido destruido. </p>
+        
+        <br>
+            
+        <h1>Un nuevo mundo de fantasía</h1>
+        <br>
+
+        <h3>
+            Recorre las Tierras Intermedias, un nuevo mundo de fantasía ideado por Hidetaka Miyazaki,
+            creador de la exitosa serie de videojuegos DARK SOULS, y por George R. R. Martin, 
+            autor de Canción de hielo y fuego, la serie de fantasía superventas según The New York Times.  </h3>
+        
+        <br>
+
+        <p>Explora el mundo de las Tierras Intermedias</p>
+
+        <div class="fakeimg1" style="height:300px;"></div><br>
+
+        <br>
+
+        <p>ELDEN RING ofrece vastos parajes de fantasía y sombrías
+            e intricadas mazmorras que están conectadas de forma fluida
+            y sin interrupciones.</p>
+
+        <div class="fakeimg2" style="height:300px;"></div><br>
+        
+    </div>
+
+
+    <div class="main">
+        <h1>Elden Ring</h1>
+        <p>Recorre este impresionante mundo a pie o a caballo, en solitario u online con otros jugadores. 
+            Sumérgete en las verdes llanuras, en los pantanos agobiantes, en las montañas tortuosas, 
+            en unos castillos que no auguran nada bueno y en otros parajes majestuosos. Todo ello,
+            a una escala nunca antes vista en un juego de FromSoftware. </p>
+        <br>
+        <br>
+        <h2> Escoge tu clase y que comience la aventura </h2>
+        <div class="fakeimg3" style="height:300x;"></div>
+        <br>
+        <br>
+        <h2> Un inmenso y fantastico mundo por explorar </h2>
+        <div class="fakeimg4" style="height:300x;"></div>
+        <br>
+        <br>
+        <h2>Lucha contra impresionantes jefes épicos </h2>
+        <p>La historia de Elden Ring nos obligará a explorar montones de lugares,
+             si bien algunos son completamente opcionales. En la mayoría encontrarás 
+             peligrosos jefes finales a los que tendrás que derrotar.</p>
+        <br>
+        <div class="fakeimg5" style="height:300px;"></div>
+        <div class="fakeimg6" style="height:300px;"></div>
+
+
+    </div>
+</div>
+
+<div class="footer">
+    <div class="clearfix">
+        <h2>el valor de este juego es de $ </h2> <h2 id='valor-dolar'>20000</h2>
+       
+        <input type="checkbox" id="checkUsd" > Ver en USD
+          
+          <br>
+        <a href="carrito.html"> <button type="button" class="comprarbtn">Añadir al carrito</button>
+        </a>
+        
+</div>
+
+
+
+
+
+{% endblock %}

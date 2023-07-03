@@ -1,0 +1,24 @@
+{% extends 'aplicacion/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static '/aplicacion/css/register.css' %}">
+{% endblock %}
+
+    {%block javascript%}
+
+     {%endblock%}
+    
+{%block contenido%}
+    <h2>Registro de usuario</h2>
+    <form action="" method="POST">
+        {% csrf_token%}
+        <table>
+            {{ form.as_table}}
+            
+        </table>
+        <input type="reset" value="Limpiar">
+        <input type="submit" value="Login">
+    </form>
+{%endblock%}

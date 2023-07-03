@@ -1,0 +1,27 @@
+{% extends 'aplicacion/base.html' %}
+
+{% load static %}
+
+{% block css%}
+{% endblock %}
+
+{% block contenido %}
+<hr>  
+<div class="list-group ">
+    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+    Cliente
+    </a>
+    <a href="cliente-inicio.html" class="list-group-item list-group-item-action">Listar Cliente</a>
+    <a href="cliente-editar.html" class="list-group-item list-group-item-action">Editar Cliente</a>
+    <a href="cliente-eliminar.html" class="list-group-item list-group-item-action">Eliminar Cliente</a>
+</div>
+<div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+    Juego
+    </a>
+    <a href="{% url 'juego_inicio' %}" class="list-group-item list-group-item-action">Listar Producto</a>
+    <a href="producto-agregar.html" class="list-group-item list-group-item-action">Crear Producto</a>
+    <a href="producto-editar.html" class="list-group-item list-group-item-action">Editar Producto</a>
+    <a href="producto-eliminar.html" class="list-group-item list-group-item-action">Eliminar Producto</a>
+</div>
+{% endblock %}

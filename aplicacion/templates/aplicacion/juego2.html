@@ -1,0 +1,78 @@
+{% extends 'aplicacion/base.html' %}
+
+{% load static %}
+
+{% block css%}
+<link rel="stylesheet" type="text/css" href="{% static '/aplicacion/css/juego2.css' %}">
+
+{% endblock %}
+
+{% block contenido %}
+
+<div class="header">
+
+</div>
+<div class="row">
+
+    <div class="side">
+        <h2>Todo sobre Mario</h2>
+        <h5></h5>
+
+        <p> Conoce a Mario, el héroe del Reino Champiñónn este usa sus increíbles habilidades,
+            trabaja al lado de sus amigos para mantener a salvo el Reino Champiñón. </p>
+
+        <div class="fakeimg" style="height:400px;"></div>
+
+        <h1>Historia</h1>
+
+        <p>Un día el reino de las pacíficas personas Champiñón fue invadido por Koopa, una tribu de tortugas
+            famosas por su magia negra. Las calladas y pacíficas personas Champiñón fueron convertidas en simples
+            piedras.</p>
+
+        <div class="fakeimg1" style="height:300px;"></div><br><br>
+
+        <h3>Reino Champiñón cayó en la ruina!!</h3>
+
+        <p>La única que podía deshacer este hechizo mágico era la princesa Toadstool. Desafortunadamente ella está
+            en manos de Bowser, el rey de los Koopas.
+            Mario se embarca en una aventura para liberar a la princesa del malvado Koopa y restaurar el reino .</p>
+
+        <div class="fakeimg2" style="height:300px;"></div><br>
+    </div>
+
+
+    <div class="main">
+        <h1>Personajes</h1>
+
+        <p>Desde la deslumbrante realeza hasta los amenazantes monstru, el reino Champiñón nos ha brindado una gran
+            cantidad de personajes inolvidables a través de los años.</p>
+
+        <div class="fakeimg3" style="height:1500px;"></div>
+
+        <h1>Transformaciones</h1>
+
+        <div class="fakeimg5"></div>
+
+        <h3>Si eres un gran seguidor de Mario o si acabas de conocerlo hoy, ¡has llegado al lugar correcto!</h3>
+
+
+    </div>
+
+
+    <div class="footer">
+        <div class="clearfix">
+            <h2>el valor de este juego es de $ </h2>
+            <h2 id='valor-dolar'>24000</h2>
+
+            <input type="checkbox" id="checkUsd"> Ver en USD
+
+            <br>
+            <a href="carrito.html"> <button type="button" class="comprarbtn">Añadir al carrito</button>
+            </a>
+
+        </div>
+    </div>
+    </div>
+</div>
+
+{% endblock %}

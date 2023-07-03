@@ -1,0 +1,102 @@
+{% extends 'aplicacion/base.html' %}
+
+{% load static %}
+
+{% block css%}
+<link rel="stylesheet" type="text/css" href="{% static '/aplicacion/css/juego8.css' %}">
+{% endblock %}
+
+
+{% block contenido %}
+<div class="header">
+    <h1></h1>
+    <h1></h1>
+    <p></p>
+</div>
+
+<div class="row">
+
+    <div class="side">
+        <h2>Acerca del juego</h2>
+        <h5></h5>
+        
+
+        <div class="fakeimg" style="height:300px;" ></div>
+    
+        
+
+        <h1>¡Comienza tu aventura Horizon hoy mismo!</h1>
+
+        <br>
+            <p>Este es Forza Horizon 5
+                Disponible en consolas Xbox Series X|S y Xbox One, 
+                PC Windows y Steam. Con Xbox Game Pass Ultimate, 
+                descarga y juega a él directamente en tu consola Xbox o PC Windows, 
+                o disfruta de juegos en tu teléfono móvil o tableta Android desde 
+                la nube con la app móvil Xbox Game Pass (en las regiones en que esté disponible). </p>
+        
+        <br>
+            
+        <h1>Tu mundo abierto</h1>
+        <br>
+
+        <h3>Un mundo abierto social </h3>
+        
+        <br>
+
+        <p>Un mundo abierto en evolución</p>
+
+        <div class="fakeimg1" style="height:300px;"></div><br>
+
+        <br>
+
+        <p>Un mundo abierto repleto de aventuras.</p>
+
+        <div class="fakeimg2" style="height:300px;"></div><br>
+        
+    </div>
+
+
+    <div class="main">
+        <h1>FORZA HORIZON 5</h1>
+        <p>Explora un mundo de impresionantes contrastes y belleza. 
+            Descubre desiertos vivientes, selvas frondosas, ciudades históricas, 
+            ruinas ocultas, playas salvajes, cañones amplios y un enorme 
+            volcán de pico nevado.  </p>
+        <br>
+        <br>
+        <h2>TU AVENTURA HORIZON POR EXCELENCIA </h2>
+        <div class="fakeimg3" style="height:300x;"></div>
+        <br>
+        <br>
+        <h2>Avances y jugabilidad  </h2>
+        <div class="fakeimg4" style="height:300x;"></div>
+        <br>
+        <br>
+        <h2>Tu aventura Horizon</h2>
+        <p>Lidera expediciones asombrosas entre los cambiantes paisajes 
+            animados más realistas jamás vistos, con una divertida acción 
+            de conducción sin límites en cientos de los mejores autos del mundo.</p>
+        <br>
+        <div class="fakeimg5" style="height:300px;"></div>
+        <div class="fakeimg6" style="height:300px;"></div>
+
+
+    </div>
+</div>
+
+<div class="footer">
+    <div class="clearfix">
+        <h2>el valor de este juego es de $ </h2> <h2 id='valor-dolar'>28000</h2>
+       
+        <input type="checkbox" id="checkUsd" > Ver en USD
+          
+          <br>
+        <a href="carrito.html"> <button type="button" class="comprarbtn">Añadir al carrito</button>
+        </a>
+        
+</div>
+
+
+
+{% endblock %}
