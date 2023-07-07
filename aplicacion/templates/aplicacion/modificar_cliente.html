@@ -1,22 +1,24 @@
 {% extends 'aplicacion/base.html' %}
 {% load static %}
+{% load  crispy_forms_tags %}
 
 {% block css %}
-<link rel="stylesheet" type="text/css" href="{% static '/aplicacion/css/modificar_cliente.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/aplicacion/css/modificar_cliente.css' %}">
 {% endblock %}
 
 {% block contenido %}
+    <br>
+    <h2 align="center">Modificar Cliente</h2>
 
-<h2>Modificar Cliente</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form|crispy }}
+        </table>
 
-<form action="" method="POST">
-    {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-    </table>
-
-    <input type="submit" value="Modificar" class="btn btn-primary">
-    <a href="{% url 'listar_cliente' %}" class="btn btn-primary">Volver</a>
-</form>
-{{ mensaje }}
+        <input type="submit" value="Modificar" class="btn btn-primary">
+        <a href="{% url 'listar_cliente' %}" class="btn btn-primary">Volver</a>
+    </form>
+    {{ mensaje }}
 {% endblock%}
+
