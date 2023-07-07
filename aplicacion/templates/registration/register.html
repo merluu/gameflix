@@ -1,24 +1,51 @@
 {% extends 'aplicacion/base.html' %}
 
-{% load static %}
-
-{% block css %}
-<link rel="stylesheet" type="text/css" href="{% static '/aplicacion/css/register.css' %}">
-{% endblock %}
-
-    {%block javascript%}
-
-     {%endblock%}
-    
-{%block contenido%}
+{% block contenido %}
+<br>
+<div class="container" align="center">
     <h2>Registro de usuario</h2>
     <form action="" method="POST">
-        {% csrf_token%}
+        {% csrf_token %}
         <table>
-            {{ form.as_table}}
-            
+            <tr>
+                <td>Nombre:</td>
+                <td><input type="text" name="{{ form.first_name.name }}"></td>
+            </tr>
+            <tr>
+                <td>Apellidos:</td>
+                <td><input type="text" name="{{ form.last_name.name }}"></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" name="{{ form.email.name }}"></td>
+            </tr>
+            <tr>
+                <td>Nombre de usuario:</td>
+                <td><input type="text" name="{{ form.username.name }}"></td>
+            </tr>
+            <tr>
+                <td>Contraseña:</td>
+                <td><input type="password" name="{{ form.password1.name }}"></td>
+            </tr>
+            <tr>
+                <td>Contraseña (confirmación):</td>
+                <td><input type="password" name="{{ form.password2.name }}"></td>
+            </tr>
         </table>
         <input type="reset" value="Limpiar">
-        <input type="submit" value="Login">
+        <input type="submit" value="Registrarse">
     </form>
-{%endblock%}
+</div>
+
+    {% if form.errors %}
+        <div class="errors">
+            <ul>
+                {% for field_errors in form.errors %}
+                    {% for error in field_errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endblock %}
