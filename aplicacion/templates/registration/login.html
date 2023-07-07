@@ -1,29 +1,31 @@
 {% extends 'aplicacion/base.html' %}
 
+{% load crispy_forms_tags %}
+
 {% load static %}
 
-{% block css %}
-<link rel="stylesheet" type="text/css" href="{% static '/aplicacion/css/login.css' %}">
-{% endblock %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 
 {%block contenido%}
-    <h2>autenticacion</h2>
-    <form action="" method="POST">
-        {% csrf_token %}
-        <table>
-            {{form.as_table}}
-        </table>
-    
-    <input type="submit" value="Login">
-    </form>
 <br>
-<br>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+            <div style="background-color: rgb(30, 28, 28);" class="card">
+                <div class="card-body">
+                    <h2>Ingreso de Usuario</h2>
+                    <hr>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <br>
+                        <input type="submit" value="Ingresar">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {%endblock%}
+
+

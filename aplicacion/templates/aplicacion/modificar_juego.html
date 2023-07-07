@@ -1,0 +1,34 @@
+{% extends 'aplicacion/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static '/aplicacion/css/nuevo_juego.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+{% endblock %}
+
+{% block contenido %}
+<br>
+
+<h2 align="center">Editar juego</h2>
+        <form action="" class="formulario_modificar_juego" method="post" enctype="multipart/form-data">
+
+                {% csrf_token %}
+                
+                {{ form|crispy }}
+        
+
+        <br>
+        
+        <button type="submit" id="btnEnviar" class="button">Editar</button>
+
+
+        </form>
+        {{mensaje}}
+
+        <table id="tabla_modificar_juego">
+        
+        </table>
+{% endblock %}

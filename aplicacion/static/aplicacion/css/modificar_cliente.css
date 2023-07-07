@@ -1,0 +1,15 @@
+.plomito {
+    color: white;
+    background-color: grey;
+
+}
+
+ul.errorlist {
+    color: red;
+    text-align: right;
+
+}
+
+ul.errorlist li {
+    display: block;
+}

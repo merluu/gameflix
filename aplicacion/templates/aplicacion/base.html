@@ -1,86 +1,94 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Gameflix</title>
+        <title>Gameflix</title>
 
-    <script src="{% static 'aplicacion/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'aplicacion/js/jquery.js' %}"></script>
-    {% block css %}
-    {% endblock %}
+        <script src="{% static 'aplicacion/js/bootstrap/bootstrap.min.js' %}"></script>
+        <script src="{% static 'aplicacion/js/jquery.js' %}"></script>
+        {% block css %}
+        {% endblock %}
 
-    <link rel="stylesheet" href="{% static 'aplicacion/css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'aplicacion/css/index.css' %}">
-</head>
+        <link rel="stylesheet" href="{% static 'aplicacion/css/bootstrap/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'aplicacion/css/index.css' %}">
+    </head>
 
-<body>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <div class="container-fluid">
-    <a class="navbar-brand .clearfix" href="{% url 'home' %}">
-        <img src="{% static 'aplicacion/imagenes/game.png' %}" alt="Avatar Logo" style="width:40px;" class="rounded-pill" id="logo"> 
-        <label class="form-check-label" for="logo">Gameflix</label>
-    </a>
-    </div>
+    <body>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand .clearfix" href="{% url 'home' %}">
+                    <img src="{% static 'aplicacion/imagenes/game.png' %}" alt="Avatar Logo" style="width:40px;" class="rounded-pill" id="logo"> 
+                    <label class="form-check-label" for="logo">Gameflix</label>
+                </a>
+            </div>
 
-    {%if user.is_authenticated%} 
-        <p>Bienvenido, {{user.username}}</p>
-        <img src="{%static 'aplicacion/imagenes/carrito.png'%}" alt="Avatar Logo" style="width:40px;" class="rounded-pill"  >   
-        <a class="navbar-brand" href="carrito.html" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="carrito de compras"></a>
-        <a class="navbar-brand" href="#" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="Cerrar Sesión">
-        <img src="{%static 'aplicacion/imagenes/logout_icon.jpeg'%}" alt="Avatar Logo" style="width:40px;" class="rounded-pill" > 
-    {%else%}
-        <img src="{%static 'aplicacion/imagenes/carrito.png'%}" alt="Avatar Logo" style="width:40px;" class="rounded-pill"  >       
-        <a class="navbar-brand" href="carrito.html" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="carrito de compras">  
-        <a class="navbar-brand" href="{% url 'login' %}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="Inicia Sesión">
-        <img src="{%static 'aplicacion/imagenes/login.png'%}" alt="Avatar Logo" style="width:40px;" class="rounded-pill" >
-    {%endif%}
-</nav>
+            {%if user.is_authenticated%} 
+                <p>Bienvenido, {{user.username}}</p>
+                <a class="navbar-brand" href="carrito.html" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="carrito de compras">
+                    <img src="{%static 'aplicacion/imagenes/carrito.png'%}" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
+                </a>
+                <a class="navbar-brand" href="{% url 'logout' %}" style="margin-right: 10px" data-toggle="tooltip" data-placement="bottom" title="Cerrar Sesión">
+                    <img src="{%static 'aplicacion/imagenes/logout_icon.jpeg'%}" alt="Avatar Logo" style="width:40px;" class="rounded-pill" >
+                </a>
+            {% else %}       
+                <a class="navbar-brand" href="carrito.html" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="carrito de compras">
+                    <img src="{%static 'aplicacion/imagenes/carrito.png'%}" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
+                </a>
+                <a class="navbar-brand" href="{% url 'login' %}" style="margin-right: 10px" data-toggle="tooltip" data-placement="bottom" title="Inicia Sesión">
+                    <img src="{%static 'aplicacion/imagenes/login.png'%}" alt="Avatar Logo" style="width:40px;" class="rounded-pill" >
+                </a>
+            {% endif %}
+        </nav>
+        <nav class="navbar navbar-expand-sm bg-danger navbar-danger">
+            <div class="container-fluid">
+                <a class="navbar-brand" style="color: #fff "href="{% url 'home' %}" >Inicio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item "><a class="nav-link" style="color: #fff" href="{% url 'cartelera' %}" tabindex="-1" aria-disabled="true">Juegos</a></li>
+                        <li class="nav-item"><a class="nav-link"  style="color: #fff" href="{% url 'contacto' %}" tabindex="-1" aria-disabled="true">Contactenos</a></li>
+                        {%if not user.is_authenticated%}
+                        <li class="nav-item"><a class="nav-link"  style="color: #fff" href="{% url 'registro_usuario' %}" tabindex="-1" aria-disabled="true">Registrarse</a></li>
+                        {% endif %}
+                        <li class="nav-item"><a class="nav-link"  style="color: #fff" href="{% url 'indexadmin' %}" tabindex="-1" aria-disabled="true">Admin</a></li>
+                    </ul>
+                </div>
+            </div>
+            <a class="navbar-brand" href="https://web.facebook.com/3djuegos" target="_blank" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="facebook">
+                <img src="{% static 'aplicacion/imagenes/facebook.png' %}" alt="Avatar Logo" style="width:40px;" class="rounded-pill" > 
+            </a>
+            <a class="navbar-brand" href="#" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="instagram">
+                <img src="{% static 'aplicacion/imagenes/insta.png' %}" alt="Avatar Logo" style="width:40px;" class="rounded-pill" > 
+            </a>
+            <a class="navbar-brand" href="#" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="whatsapp">
+                <img src="{% static 'aplicacion/imagenes/whatsapp_icon.png' %}" alt="Avatar Logo" style="width:40px;" class="rounded-pill" > 
+            </a>
+        </nav>
 
-<nav class="navbar navbar-expand-sm bg-danger navbar-danger" >
-    <div class="container-fluid">
-    <a class="navbar-brand" style="color: #fff "href="{% url 'home' %}" >Inicio</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item ">
-        <a class="nav-link" style="color: #fff" href="{% url 'cartelera' %}" tabindex="-1" aria-disabled="true">Juegos</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link"  style="color: #fff" href="{% url 'contacto' %}" tabindex="-1" aria-disabled="true">Contactenos</a>
-        </li>
-        </ul>
-    </div>
-    </div>
-    <a class="navbar-brand" href="https://web.facebook.com/3djuegos" target="_blank" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="facebook">
-    <img src="{% static 'aplicacion/imagenes/facebook.png' %}" alt="Avatar Logo" style="width:40px;" class="rounded-pill" > 
-    </a>
-    <a class="navbar-brand" href="#" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="instagram">
-    <img src="{% static 'aplicacion/imagenes/insta.png' %}" alt="Avatar Logo" style="width:40px;" class="rounded-pill" > 
-    </a>
-    <a class="navbar-brand" href="#" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="whatsapp">
-    <img src="{% static 'aplicacion/imagenes/whatsapp_icon.png' %}" alt="Avatar Logo" style="width:40px;" class="rounded-pill" > 
-    </a>
-</nav>
-<hr>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+        {% if messages %}
+            {% for m in messages %}
+                <script>
+                    swal.fire({
+                        "tittle": "felicitaciones",
+                        "text":"{{m}}",
+                        "Icon": "succes"
+                    })
+                </script>
+            {% endfor %}
+        {% endif %}
 
+        {% block contenido %}
 
-
-    {% block contenido %}
-
-    {% endblock %}
-
-
-
-<br>
-
-</body>
+        {% endblock %}
+    </body>
 </html>
 
 
