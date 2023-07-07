@@ -8,49 +8,86 @@ from .models import Cliente
 from django.contrib.auth.models import User
 from django.conf import settings
 import datetime
+import re
+
 
 class CustomUserForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'email', 'username', 'password1', 'password2']
-        
+        fields = ['first_name', 'last_name', 'email',
+                  'username', 'password1', 'password2']
+
 
 class JuegoForm(forms.ModelForm):
-
-    nombre = forms.CharField(widget=forms.TextInput)
-    precio = forms.CharField(widget=forms.TextInput)
-    descripcion = forms.CharField(widget=forms.TextInput)
-    fecha_creacion = forms.DateField(widget=forms.SelectDateWidget, input_formats=settings.DATE_INPUT_FORMATS)
-    stock = forms.CharField(widget=forms.TextInput)
-
     class Meta:
         model = Juego
-        fields = ['nombre', 'precio', 'descripcion', 'fecha_creacion','stock','imagen']
+        fields = ['nombre', 'precio', 'descripcion',
+                  'fecha_creacion', 'stock', 'imagen']
 
-    def val_nombre(self):
-        nombre = self.cleaned_data.get('nombre')
-        if len(nombre)<4:
-            raise forms.ValidationError("El nombre debe tener al menos 4 caracteres")
+        widgets = {
+            'fecha_creacion': forms.SelectDateWidget(years=range(2000, 2024))
+        }
+
+    def clean_fecha_creacion(self):
+        fecha = self.cleaned_data['fecha_creacion']
+
+        if fecha > datetime.date.today():
+            raise forms.ValidationError(
+                "La fecha de creación debe estar entre los parámetros.")
+
+        return fecha
+
+    def clean_descripcion(self):
+        descripcion = self.cleaned_data['descripcion']
+        if len(descripcion) <= 20:
+            raise forms.ValidationError(
+                "La descripción del juego debe tener más de 20 caracteres para ser agregada.")
+        return descripcion
+
+    def clean_nombre(self):
+        nombre = self.cleaned_data['nombre']
+        if len(nombre) <= 3:
+            raise forms.ValidationError(
+                "El nombre del juego debe tener más de 3 caracteres para ser agregado.")
+        elif not all(c.isalpha() or c.isspace() for c in nombre):
+            raise forms.ValidationError(
+                "El nombre del juego solo debe contener letras y espacios.")
         return nombre
-    
 
-    def va_precio(self):
-        precio =self.cleaned_data.get('precio')
-        if precio<=0:
-            raise forms.ValidationError("El precio tiene que ser mayor que 0")
+    def clean_precio(self):
+        precio = self.cleaned_data['precio']
+        if precio <= 5000:
+            raise forms.ValidationError(
+                "El precio debe ser mayor a 5000.")
         return precio
-    
+
+    def clean_stock(self):
+        stock = self.cleaned_data['stock']
+        if not re.match(r'^[1-9]\d{0,2}$', str(stock)):
+            raise forms.ValidationError("El stock debe ser un número entero entre 1 y 200.")
+        return stock
+
+    # pinche imagen
+    def clean_imagen(self):
+        imagen = self.cleaned_data.get('imagen', False)
+        if imagen:
+
+            pass
+
+        return imagen
+
 
 class ContactoForm(forms.ModelForm):
     nombre = forms.CharField(widget=forms.TextInput)
     correo = forms.CharField(widget=forms.TextInput)
-    tipo_consulta = forms.ChoiceField(choices=opciones_consultas, widget=forms.Select(attrs={'class': 'form-control'}))
+    tipo_consulta = forms.ChoiceField(
+        choices=opciones_consultas, widget=forms.Select(attrs={'class': 'form-control'}))
     mensaje = forms.CharField(widget=forms.TextInput)
 
     class Meta:
         model = Contacto
         #fields = ("nombre","correo","tipo_consulta","mensaje")
-        fields = '__all__' 
+        fields = '__all__'
 
 
 class ClienteForm(ModelForm):
@@ -61,7 +98,8 @@ class ClienteForm(ModelForm):
 
     class Meta:
         model = Cliente
-        fields = ['rut', 'pnombre', 'papellido','sapellido', 'fecha_nacimiento', 'email']
+        fields = ['rut', 'pnombre', 'papellido',
+                  'sapellido', 'fecha_nacimiento', 'email']
 
         widgets = {
             'fecha_nacimiento': forms.SelectDateWidget(years=range(1960, 2024))
@@ -77,33 +115,40 @@ class ClienteForm(ModelForm):
         return fecha
 
     def clean_pnombre(self):
-        pnombre = self.cleaned_data[
-            'pnombre']
+        pnombre = self.cleaned_data['pnombre']
         if len(pnombre) <= 3:
             raise forms.ValidationError(
-                "El nombre debe tener  3 o más caracteres para ser modificado")
+                "El nombre del cliente debe tener más de 3 caracteres para ser modificado.")
+        elif not re.match("^[a-zA-Z]+$", pnombre):
+            raise forms.ValidationError(
+                "El nombre del cliente solo debe contener letras.")
         return pnombre
 
     def clean_papellido(self):
-        papellido = self.cleaned_data[
-            'papellido']
+        papellido = self.cleaned_data['papellido']
         if len(papellido) <= 3:
             raise forms.ValidationError(
-                "El primer apellido debe tener  3 o más caracteres para ser modificado")
+                "El apellido del cliente debe tener más de 3 caracteres para ser modificado.")
+        elif not re.match("^[a-zA-Z]+$", papellido):
+            raise forms.ValidationError(
+                "El apellido del cliente solo debe contener letras.")
         return papellido
 
     def clean_sapellido(self):
-        sapellido = self.cleaned_data[
-            'sapellido']
+        sapellido = self.cleaned_data['sapellido']
         if len(sapellido) <= 3:
             raise forms.ValidationError(
-                "El segundo apellido debe tener  3 o más caracteres para ser modificado")
+                "El apellido del cliente debe tener más de 3 caracteres para ser modificado.")
+        elif not re.match("^[a-zA-Z]+$", sapellido):
+            raise forms.ValidationError(
+                "El apellido del cliente solo debe contener letras.")
         return sapellido
 
     def clean_email(self):
         email = self.cleaned_data['email']
-        
+
         if '.' not in email or '@' not in email:
-            raise forms.ValidationError("El correo electrónico debe contener un punto (.) y un símbolo de arroba (@) para ser modificado")
+            raise forms.ValidationError(
+                "El correo electrónico debe contener un punto (.) y un símbolo de arroba (@) para ser modificado")
 
         return email
