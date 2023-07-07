@@ -1,13 +1,13 @@
 {% extends 'aplicacion/base.html' %}
 {% load static %}
-
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{% static '/aplicacion/css/modificar_cliente.css' %}">
+
 {% endblock %}
 
 {% block contenido %}
-
-<h2>Modificar Cliente</h2>
+<br>
+<h2 align="center">Modificar Cliente</h2>
 
 <form action="" method="POST">
     {% csrf_token %}
