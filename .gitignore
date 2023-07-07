@@ -2,3 +2,6 @@ db.sqlite3
 _pycache_/
 aplicacion/_pycache_/
 *.pyc
+*.pyo
+*.log
+media/

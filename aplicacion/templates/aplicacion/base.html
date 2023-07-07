@@ -35,7 +35,7 @@
                     <img src="{%static 'aplicacion/imagenes/logout_icon.jpeg'%}" alt="Avatar Logo" style="width:40px;" class="rounded-pill" >
                 </a>
             {% else %}       
-                <a class="navbar-brand" href="carrito.html" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="carrito de compras">
+                <a class="navbar-brand" href="{% url 'carrito' %}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="carrito de compras">
                     <img src="{%static 'aplicacion/imagenes/carrito.png'%}" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
                 </a>
                 <a class="navbar-brand" href="{% url 'login' %}" style="margin-right: 10px" data-toggle="tooltip" data-placement="bottom" title="Inicia Sesión">
