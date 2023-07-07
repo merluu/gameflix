@@ -1,0 +1,40 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static '/aplicacion/css/listar_cliente.css' %}">
+{% endblock %}
+
+{% block contenido %}
+
+<h2>Lista de Clientes</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Rut</th>
+            <th>Primer nombre</th>
+            <th>Primer apellido</th>
+            <th>Segundo apellido</th>
+            <th>Fecha de nacimiento</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for c in clientes %}
+        <tr>
+            <td>{{ c.rut }}</td>
+            <td>{{ c.pnombre|capfirst }}</td>
+            <td>{{ c.papellido|capfirst }}</td>
+            <td>{{ c.sapellido|capfirst }}</td>
+            <td>{{ c.fecha_nacimiento }}</td>
+            <td>{{ c.email }}</td>
+
+            <td>
+                <a href="{% url 'modificar_cliente' c.rut %}">Modificar</a>
+                <a href="{% url 'eliminar_cliente' c.rut %}">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

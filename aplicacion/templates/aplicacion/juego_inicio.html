@@ -1,5 +1,6 @@
 {% extends 'aplicacion/base.html' %}
 
+
 {% load static %}
 
 
@@ -9,35 +10,67 @@
 {% endblock %}
 
 {% block contenido %}
+
+<script>
+    function eliminarJuego(id) {
+        //console.log(id);
+        swal.fire({
+            "tittle": "¡Esta acción no se puede deshacer!",
+            "text": "¿Estas seguro que deseas eliminar?",
+            "icon":"warning",
+            "showCancelButton": true,
+            "cancelButtonText":"No,Cancelar",
+            "confirmButtonText": "si, Eliminar",
+            "reverseButtons": true ,
+            "confirmButtonColor":"#dc3545"
+        })
+        .then(function(result) {
+            if(result.isConfirmed){
+                window.location.href="/eliminar_juego/" +id+"/"
+            }
+
+        })
+        
+    }
+</script>
+
+
 <hr>
 <div align="center">
 <h2 style="color: white;">Lista de Juegos</h2>
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-2">id juego</div>
+        <div class="col-1">id juego</div>
         <div class="col-2">Nombre</div>
-        <div class="col-2">Precio</div>
+        <div class="col-1">Precio</div>
         <div class="col-2">Fecha</div>
-        <div class="col-4">Imagen</div>
+        <div class="col-2">Imagen</div>
+        <div class="col-2">Opciones</div>
     </div>
-<div class="container-fluid">
+    <div class="container-fluid">
         
     {% for j in juegos %}
         <div class="row">
             <hr>
-            <div class="col-sm-2">{{j.id }}</div>
+            <div class="col-sm-1">{{j.id }}</div>
             <br>
             <div class="col-sm-2">{{j.nombre |capfirst}}</div>
             <br>
-            <div class="col-sm-2">{{j.precio }}</div>
+            <div class="col-sm-1">{{j.precio }}</div>
             <br>
             <div class="col-sm-2">{{j.fecha_creacion}}</div>
             <br>
-            <div class="col-sm-4"><img src="{{j.imagen.url}}" alt="imagen juego" class="img-fluid" width="80" 
+            <div class="col-sm-2"><img src="{{j.imagen.url}}" alt="imagen juego" class="img-fluid" width="80" 
             height="80"></div>
+            <div class="col-sm-1"><a href="{% url 'modificar_juego' j.id %}" class="btn btn-success btn-sm">Modificar</a></div>
+            <div class="col-sm-1"><a href="#" onclick="eliminarJuego({{j.id}})" class="btn btn-danger btn-sm">Eliminar</a></div>
+            
         </div>
     {% endfor %}
     </div>
 </div>
 {% endblock %}
+
+<!--{% url 'eliminar_juego' j.id %}-->
+<!--<div class="col-sm-1"><a href="#" onclick="eliminarJuego({{j.id}})"  class="btn btn-danger btn-sm">Eliminar</a></div>-->
