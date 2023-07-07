@@ -1,18 +1,18 @@
 {% extends 'aplicacion/base.html' %}
 {% load static %}
-
+{% load  crispy_forms_tags %}
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{% static '/aplicacion/css/modificar_cliente.css' %}">
 {% endblock %}
 
 {% block contenido %}
 
-<h2>Modificar Cliente</h2>
+<h2 align="center">Modificar Cliente</h2>
 
 <form action="" method="POST">
     {% csrf_token %}
     <table>
-        {{ form.as_table }}
+        {{ form|crispy }}
     </table>
 
     <input type="submit" value="Modificar" class="btn btn-primary">
@@ -20,3 +20,4 @@
 </form>
 {{ mensaje }}
 {% endblock%}
+
