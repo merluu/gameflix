@@ -49,9 +49,9 @@ class JuegoForm(forms.ModelForm):
         if len(nombre) <= 3:
             raise forms.ValidationError(
                 "El nombre del juego debe tener más de 3 caracteres para ser agregado.")
-        elif not re.match("^[a-zA-Z0-9_]+$", nombre):
+        elif not all(c.isalpha() or c.isspace() for c in nombre):
             raise forms.ValidationError(
-                "El nombre del juego solo debe contener letras y números.")
+                "El nombre del juego solo debe contener letras y espacios.")
         return nombre
 
     def clean_precio(self):
@@ -66,7 +66,7 @@ class JuegoForm(forms.ModelForm):
         if not re.match(r'^[1-9]\d{0,2}$', str(stock)):
             raise forms.ValidationError("El stock debe ser un número entero entre 1 y 200.")
         return stock
-        
+
     # pinche imagen
     def clean_imagen(self):
         imagen = self.cleaned_data.get('imagen', False)
